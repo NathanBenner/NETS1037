@@ -60,7 +60,7 @@ Download node_exporter to your Fedora machine
 Then start the node_exporter service
 
     cd node_exporter-1.5.0.linux-amd64/
-    ./node_exporter > /dev/null 2>&1 &
+    ./node_exporter
 
 When you run node_exporter locally, navigate to http://localhost:9100/metrics to check that it is exporting metrics.
 
@@ -73,7 +73,7 @@ Download Prometheus to your Fedora machine
 Start the Prometheus service
 
     cd prometheus-2.44.0-rc.1.linux.amd64
-    ./prometheus --config.file=./prometheus.yml > /dev/null 2>&1 &
+    ./prometheus --config.file=./prometheus.yml 
 
 Confirm that Prometheus is running by navigating to http://localhost:9090.
 
@@ -88,4 +88,4 @@ Download and extract Grafana to your Fedora machine
 Then start Grafana Server in the background
 
     cd grafana-9.5.1
-    ./bin/grafana-server > /dev/null 2>&1 &
+    ./bin/grafana-server 

@@ -15,9 +15,9 @@ Submit screenshots (including your student number):
 
 The services can be run in a single terminal as shown below:
 
-    ./loki-linux-amd64 -config.file=loki-local-config.yaml > /dev/null 2>&1 & 
-    ./promtail-linux-amd64 -config.file=promtail-remote-config.yaml > /dev/null 2>&1 & 
-    ./bin/grafana-server > /dev/null 2>&1 & 
+    ./loki-linux-amd64 -config.file=loki-local-config.yaml 
+    ./promtail-linux-amd64 -config.file=promtail-remote-config.yaml 
+    ./bin/grafana-server 
 
 or each service can be run in it's own terminal as shown below. This method will print application logs to the terminal and is useful for troubleshooting errors.
 

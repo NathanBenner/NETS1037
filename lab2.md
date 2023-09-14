@@ -15,6 +15,7 @@ http://www.net-snmp.org/
 http://www.net-snmp.org/wiki/index.php/Tutorials
 
 Update your Fedora machine
+
     sudo dnf update -y
 
 Install SNMP services and utilities packages
@@ -80,7 +81,7 @@ Download and extract snmp_exporter
 Start the snmp_exporter service
 
     cd snmp_exporter-0.21.0.linux-amd64/ 
-    ./snmp_exporter > /dev/null 2>&1 &
+    ./snmp_exporter
 
 ## Add SNMP exporter to Prometheus scrape config
 
@@ -106,9 +107,9 @@ Add the below lines to the prometheus.yml under "scrape_configs". See this link 
 
 ## Start Prometheus and Grafana
 
-    ./prometheus --config.file=prometheus.yml > /dev/null 2&>1 &
+    ./prometheus --config.file=prometheus.yml
     cd ../grafana-9.5.1/
-    ./grafana > /dev/null 2&>1 &
+    ./bin/grafana-server
 
 ## Add Prometheus as a datasource to Grafana
 

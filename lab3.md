@@ -29,7 +29,7 @@ Download an example Loki configuration file
 
 Then start the loki service
 
-    ./loki-linux-amd64 -config.file=loki-local-config.yaml > /dev/null 2>&1 &
+    ./loki-linux-amd64 -config.file=loki-local-config.yaml
 
 Download and extract Promtail
    
@@ -43,12 +43,12 @@ Download an example Promtail configuration file
 
 Then start the promtail service
 
-    ./promtail-linux-amd64 -config.file=promtail-local-config.yaml > /dev/null 2>&1 &
+    ./promtail-linux-amd64 -config.file=promtail-local-config.yaml
 
 ## Start Grafana
 
     cd ../grafana-9.5.1/
-    ./bin/grafana-server > /dev/null 2&>1 &
+    ./bin/grafana-server
 
 ## Add Loki to Grafana as a data source
 
@@ -105,19 +105,9 @@ scrape_configs:
 
 # end promtail.yml
 
-Identify the job number of the currently running Promtail
+Stop promtail using control-C then start Promtail using the remote config
 
-    jobs
-
-Bring the currently running Promtail to the foreground
-
-    fg <promtail_job_number>
-
-Then stop promtail using control-C
-
-Then start Promtail using the remote config
-
-    ./promtail-linux-amd64 -config.file=promtail-remote-config.yaml > /dev/null 2>&1 &
+    ./promtail-linux-amd64 -config.file=promtail-remote-config.yaml
 
 ## Install and configure Rsyslog
 
